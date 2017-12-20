@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
 
     // create and show your widgets here
     MainMenu form;
-    form.showMaximized();
+    form.show();
 
     return app.exec();
 }

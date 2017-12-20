@@ -5,16 +5,22 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>MainMenu.h</itemPath>
+      <itemPath>NewGameForm.h</itemPath>
+      <itemPath>SnakesAndLaddersGameForm.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
       <itemPath>MainMenu.ui</itemPath>
+      <itemPath>NewGameForm.ui</itemPath>
+      <itemPath>SnakesAndLaddersGameForm.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>MainMenu.cpp.cc</itemPath>
+      <itemPath>NewGameForm.cpp.cc</itemPath>
+      <itemPath>SnakesAndLaddersGameForm.cpp.cc</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -51,6 +57,18 @@
       </item>
       <item path="MainMenu.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="NewGameForm.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NewGameForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NewGameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SnakesAndLaddersGameForm.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SnakesAndLaddersGameForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SnakesAndLaddersGameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -84,6 +102,18 @@
       <item path="MainMenu.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MainMenu.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NewGameForm.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NewGameForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NewGameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SnakesAndLaddersGameForm.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SnakesAndLaddersGameForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SnakesAndLaddersGameForm.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

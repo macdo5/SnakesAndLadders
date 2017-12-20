@@ -12,6 +12,7 @@
  */
 
 #include "MainMenu.h"
+#include "NewGameForm.h"
 
 MainMenu::MainMenu() {
     widget.setupUi(this);
@@ -26,7 +27,10 @@ MainMenu::~MainMenu() {
 }
 
 void MainMenu::btnNewGamePressed(){
-    printf("The New Game button has been pressed\n"); 
+    printf("The New Game button has been pressed\n");
+    NewGameForm *newGameForm = new NewGameForm();
+    newGameForm->show();
+    hide();
 }
 
 void MainMenu::btnExitPressed(){

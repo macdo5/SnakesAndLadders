@@ -49,10 +49,18 @@ OBJECTS_DIR   = build/Debug/GNU-Linux/
 ####### Files
 
 SOURCES       = MainMenu.cpp.cc \
-		main.cpp moc_MainMenu.cpp
+		NewGameForm.cpp.cc \
+		SnakesAndLaddersGameForm.cpp.cc \
+		main.cpp moc_MainMenu.cpp \
+		moc_NewGameForm.cpp \
+		moc_SnakesAndLaddersGameForm.cpp
 OBJECTS       = build/Debug/GNU-Linux/MainMenu.cpp.o \
+		build/Debug/GNU-Linux/NewGameForm.cpp.o \
+		build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o \
 		build/Debug/GNU-Linux/main.o \
-		build/Debug/GNU-Linux/moc_MainMenu.o
+		build/Debug/GNU-Linux/moc_MainMenu.o \
+		build/Debug/GNU-Linux/moc_NewGameForm.o \
+		build/Debug/GNU-Linux/moc_SnakesAndLaddersGameForm.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -114,7 +122,11 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		nbproject/nbproject/qt-Debug.pro MainMenu.h MainMenu.cpp.cc \
+		nbproject/nbproject/qt-Debug.pro MainMenu.h \
+		NewGameForm.h \
+		SnakesAndLaddersGameForm.h MainMenu.cpp.cc \
+		NewGameForm.cpp.cc \
+		SnakesAndLaddersGameForm.cpp.cc \
 		main.cpp
 QMAKE_TARGET  = SnakesAndLadders
 DESTDIR       = dist/Debug/GNU-Linux/
@@ -124,7 +136,7 @@ TARGET        = dist/Debug/GNU-Linux/SnakesAndLadders
 first: all
 ####### Build rules
 
-$(TARGET): ui_MainMenu.h $(OBJECTS)  
+$(TARGET): ui_MainMenu.h ui_NewGameForm.h ui_SnakesAndLaddersGameForm.h $(OBJECTS)  
 	@test -d dist/Debug/GNU-Linux/ || mkdir -p dist/Debug/GNU-Linux/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -273,9 +285,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents MainMenu.h $(DISTDIR)/
-	$(COPY_FILE) --parents MainMenu.cpp.cc main.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents MainMenu.ui $(DISTDIR)/
+	$(COPY_FILE) --parents MainMenu.h NewGameForm.h SnakesAndLaddersGameForm.h $(DISTDIR)/
+	$(COPY_FILE) --parents MainMenu.cpp.cc NewGameForm.cpp.cc SnakesAndLaddersGameForm.cpp.cc main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents MainMenu.ui NewGameForm.ui SnakesAndLaddersGameForm.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -301,22 +313,40 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_MainMenu.cpp
+compiler_moc_header_make_all: moc_MainMenu.cpp moc_NewGameForm.cpp moc_SnakesAndLaddersGameForm.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_MainMenu.cpp
+	-$(DEL_FILE) moc_MainMenu.cpp moc_NewGameForm.cpp moc_SnakesAndLaddersGameForm.cpp
 moc_MainMenu.cpp: ui_MainMenu.h \
 		MainMenu.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/oscar/NetBeansProjects/SnakesAndLadders/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include MainMenu.h -o moc_MainMenu.cpp
 
+moc_NewGameForm.cpp: ui_NewGameForm.h \
+		NewGameForm.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/oscar/NetBeansProjects/SnakesAndLadders/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include NewGameForm.h -o moc_NewGameForm.cpp
+
+moc_SnakesAndLaddersGameForm.cpp: ui_SnakesAndLaddersGameForm.h \
+		SnakesAndLaddersGameForm.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/oscar/NetBeansProjects/SnakesAndLadders/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include SnakesAndLaddersGameForm.h -o moc_SnakesAndLaddersGameForm.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_MainMenu.h
+compiler_uic_make_all: ui_MainMenu.h ui_NewGameForm.h ui_SnakesAndLaddersGameForm.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_MainMenu.h
+	-$(DEL_FILE) ui_MainMenu.h ui_NewGameForm.h ui_SnakesAndLaddersGameForm.h
 ui_MainMenu.h: MainMenu.ui \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/uic
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic MainMenu.ui -o ui_MainMenu.h
+
+ui_NewGameForm.h: NewGameForm.ui \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/uic
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic NewGameForm.ui -o ui_NewGameForm.h
+
+ui_SnakesAndLaddersGameForm.h: SnakesAndLaddersGameForm.ui \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/uic
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic SnakesAndLaddersGameForm.ui -o ui_SnakesAndLaddersGameForm.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -329,8 +359,18 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 ####### Compile
 
 build/Debug/GNU-Linux/MainMenu.cpp.o: MainMenu.cpp.cc MainMenu.h \
-		ui_MainMenu.h
+		ui_MainMenu.h \
+		NewGameForm.h \
+		ui_NewGameForm.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/MainMenu.cpp.o MainMenu.cpp.cc
+
+build/Debug/GNU-Linux/NewGameForm.cpp.o: NewGameForm.cpp.cc NewGameForm.h \
+		ui_NewGameForm.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/NewGameForm.cpp.o NewGameForm.cpp.cc
+
+build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o: SnakesAndLaddersGameForm.cpp.cc SnakesAndLaddersGameForm.h \
+		ui_SnakesAndLaddersGameForm.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o SnakesAndLaddersGameForm.cpp.cc
 
 build/Debug/GNU-Linux/main.o: main.cpp MainMenu.h \
 		ui_MainMenu.h
@@ -338,6 +378,12 @@ build/Debug/GNU-Linux/main.o: main.cpp MainMenu.h \
 
 build/Debug/GNU-Linux/moc_MainMenu.o: moc_MainMenu.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_MainMenu.o moc_MainMenu.cpp
+
+build/Debug/GNU-Linux/moc_NewGameForm.o: moc_NewGameForm.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_NewGameForm.o moc_NewGameForm.cpp
+
+build/Debug/GNU-Linux/moc_SnakesAndLaddersGameForm.o: moc_SnakesAndLaddersGameForm.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_SnakesAndLaddersGameForm.o moc_SnakesAndLaddersGameForm.cpp
 
 ####### Install
 
