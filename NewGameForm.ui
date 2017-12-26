@@ -66,6 +66,9 @@
     <property name="text">
      <string>H&amp;uman</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QRadioButton" name="rdoBtnP1Comp">
     <property name="geometry">
@@ -229,48 +232,7 @@
     </property>
    </widget>
   </widget>
-  <zorder>lblNumPlayers</zorder>
-  <zorder>spnBoxNumPlayers</zorder>
-  <zorder>grpBoxP1</zorder>
-  <zorder>btnPlay</zorder>
-  <zorder>groupBox_2</zorder>
-  <zorder>grpBoxP2</zorder>
-  <zorder>grpBoxP3</zorder>
-  <zorder>grpBoxP4</zorder>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>rdoBtnP1Hum</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>rdoBtnP1Comp</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>137</x>
-     <y>72</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>73</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rdoBtnP2Comp</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>rdoBtnP2Hum</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>278</x>
-     <y>129</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>149</x>
-     <y>131</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -22,7 +22,7 @@ public:
     NewGameForm();
     virtual ~NewGameForm();
 private slots:
-    void valueChanged(int i);    
+    void numPlayersChanged(int i);    
 private:
     Ui::NewGameForm widget;
     void disableAllPlayerOptions();
