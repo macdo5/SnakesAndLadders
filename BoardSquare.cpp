@@ -22,3 +22,7 @@ BoardSquare::BoardSquare(const BoardSquare& orig) {
 BoardSquare::~BoardSquare() {
 }
 
+int BoardSquare::GetPosition() const {
+    return position;
+}
+

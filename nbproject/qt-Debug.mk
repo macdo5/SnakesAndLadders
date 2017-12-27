@@ -49,18 +49,24 @@ OBJECTS_DIR   = build/Debug/GNU-Linux/
 ####### Files
 
 SOURCES       = BoardSquare.cpp \
+		Ladder.cpp \
 		MainMenu.cpp.cc \
 		NewGameForm.cpp.cc \
 		Player.cpp \
+		Snake.cpp \
 		SnakesAndLaddersGameForm.cpp.cc \
+		Transporter.cpp \
 		main.cpp moc_MainMenu.cpp \
 		moc_NewGameForm.cpp \
 		moc_SnakesAndLaddersGameForm.cpp
 OBJECTS       = build/Debug/GNU-Linux/BoardSquare.o \
+		build/Debug/GNU-Linux/Ladder.o \
 		build/Debug/GNU-Linux/MainMenu.cpp.o \
 		build/Debug/GNU-Linux/NewGameForm.cpp.o \
 		build/Debug/GNU-Linux/Player.o \
+		build/Debug/GNU-Linux/Snake.o \
 		build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o \
+		build/Debug/GNU-Linux/Transporter.o \
 		build/Debug/GNU-Linux/main.o \
 		build/Debug/GNU-Linux/moc_MainMenu.o \
 		build/Debug/GNU-Linux/moc_NewGameForm.o \
@@ -127,14 +133,20 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		nbproject/nbproject/qt-Debug.pro BoardSquare.h \
+		Ladder.h \
 		MainMenu.h \
 		NewGameForm.h \
 		Player.h \
-		SnakesAndLaddersGameForm.h BoardSquare.cpp \
+		Snake.h \
+		SnakesAndLaddersGameForm.h \
+		Transporter.h BoardSquare.cpp \
+		Ladder.cpp \
 		MainMenu.cpp.cc \
 		NewGameForm.cpp.cc \
 		Player.cpp \
+		Snake.cpp \
 		SnakesAndLaddersGameForm.cpp.cc \
+		Transporter.cpp \
 		main.cpp
 QMAKE_TARGET  = SnakesAndLadders
 DESTDIR       = dist/Debug/GNU-Linux/
@@ -293,8 +305,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents BoardSquare.h MainMenu.h NewGameForm.h Player.h SnakesAndLaddersGameForm.h $(DISTDIR)/
-	$(COPY_FILE) --parents BoardSquare.cpp MainMenu.cpp.cc NewGameForm.cpp.cc Player.cpp SnakesAndLaddersGameForm.cpp.cc main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents BoardSquare.h Ladder.h MainMenu.h NewGameForm.h Player.h Snake.h SnakesAndLaddersGameForm.h Transporter.h $(DISTDIR)/
+	$(COPY_FILE) --parents BoardSquare.cpp Ladder.cpp MainMenu.cpp.cc NewGameForm.cpp.cc Player.cpp Snake.cpp SnakesAndLaddersGameForm.cpp.cc Transporter.cpp main.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents MainMenu.ui NewGameForm.ui SnakesAndLaddersGameForm.ui $(DISTDIR)/
 
 
@@ -369,6 +381,11 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 build/Debug/GNU-Linux/BoardSquare.o: BoardSquare.cpp BoardSquare.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/BoardSquare.o BoardSquare.cpp
 
+build/Debug/GNU-Linux/Ladder.o: Ladder.cpp Ladder.h \
+		Transporter.h \
+		BoardSquare.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Ladder.o Ladder.cpp
+
 build/Debug/GNU-Linux/MainMenu.cpp.o: MainMenu.cpp.cc MainMenu.h \
 		ui_MainMenu.h \
 		NewGameForm.h \
@@ -382,9 +399,18 @@ build/Debug/GNU-Linux/NewGameForm.cpp.o: NewGameForm.cpp.cc NewGameForm.h \
 build/Debug/GNU-Linux/Player.o: Player.cpp Player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Player.o Player.cpp
 
+build/Debug/GNU-Linux/Snake.o: Snake.cpp Snake.h \
+		Transporter.h \
+		BoardSquare.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Snake.o Snake.cpp
+
 build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o: SnakesAndLaddersGameForm.cpp.cc SnakesAndLaddersGameForm.h \
 		ui_SnakesAndLaddersGameForm.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o SnakesAndLaddersGameForm.cpp.cc
+
+build/Debug/GNU-Linux/Transporter.o: Transporter.cpp Transporter.h \
+		BoardSquare.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Transporter.o Transporter.cpp
 
 build/Debug/GNU-Linux/main.o: main.cpp MainMenu.h \
 		ui_MainMenu.h

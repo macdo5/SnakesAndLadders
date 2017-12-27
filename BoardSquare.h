@@ -15,10 +15,12 @@
 #define BOARDSQUARE_H
 
 class BoardSquare {
+    int position;
 public:
     BoardSquare();
     BoardSquare(const BoardSquare& orig);
     virtual ~BoardSquare();
+    int GetPosition() const;
 private:
 
 };

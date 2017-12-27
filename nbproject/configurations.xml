@@ -5,10 +5,13 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>BoardSquare.h</itemPath>
+      <itemPath>Ladder.h</itemPath>
       <itemPath>MainMenu.h</itemPath>
       <itemPath>NewGameForm.h</itemPath>
       <itemPath>Player.h</itemPath>
+      <itemPath>Snake.h</itemPath>
       <itemPath>SnakesAndLaddersGameForm.h</itemPath>
+      <itemPath>Transporter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -21,10 +24,13 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>BoardSquare.cpp</itemPath>
+      <itemPath>Ladder.cpp</itemPath>
       <itemPath>MainMenu.cpp.cc</itemPath>
       <itemPath>NewGameForm.cpp.cc</itemPath>
       <itemPath>Player.cpp</itemPath>
+      <itemPath>Snake.cpp</itemPath>
       <itemPath>SnakesAndLaddersGameForm.cpp.cc</itemPath>
+      <itemPath>Transporter.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -59,6 +65,10 @@
       </item>
       <item path="BoardSquare.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Ladder.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ladder.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MainMenu.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainMenu.h" ex="false" tool="3" flavor2="0">
@@ -75,11 +85,19 @@
       </item>
       <item path="Player.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Snake.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Snake.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="SnakesAndLaddersGameForm.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SnakesAndLaddersGameForm.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SnakesAndLaddersGameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Transporter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Transporter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -113,6 +131,10 @@
       </item>
       <item path="BoardSquare.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Ladder.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ladder.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="MainMenu.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainMenu.h" ex="false" tool="3" flavor2="0">
@@ -129,11 +151,19 @@
       </item>
       <item path="Player.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Snake.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Snake.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="SnakesAndLaddersGameForm.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SnakesAndLaddersGameForm.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SnakesAndLaddersGameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Transporter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Transporter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
