@@ -37,6 +37,8 @@ public:
     GameManager(int numPlayers, bool playerIsHuman [], int numDice, int boardLength);
     GameManager(const GameManager& orig);
     virtual ~GameManager();
+    
+    Play();
 private:
 
 };

@@ -9,12 +9,9 @@
         <group>
             <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/NewGameForm.cpp.cc</file>
             <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/GameManager.h</file>
-            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/MainMenu.h</file>
-            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/NewGameForm.h</file>
+            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/GameForm.h</file>
             <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/MainMenu.cpp.cc</file>
-            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/Player.cpp</file>
-            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/Player.h</file>
-            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/GameManager.cpp</file>
+            <file>file:/home/oscar/NetBeansProjects/SnakesAndLadders/GameForm.cpp.cc</file>
         </group>
     </open-files>
 </project-private>
