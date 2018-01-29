@@ -18,6 +18,7 @@ class BoardSquare {
     int position;
 public:
     BoardSquare();
+    BoardSquare(int position);
     BoardSquare(const BoardSquare& orig);
     virtual ~BoardSquare();
     int GetPosition() const;

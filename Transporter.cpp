@@ -18,7 +18,7 @@ Transporter::Transporter(){
 }
 
 Transporter::Transporter(BoardSquare* topSquare, BoardSquare* bottomSquare) : 
-topSquare(topSquare), bottomSquare(bottomSquare) {
+    topSquare(topSquare), bottomSquare(bottomSquare) {
     
 }
 

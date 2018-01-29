@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     // initialize resources, if needed
     // Q_INIT_RESOURCE(resfile);
 
-    printf("Hello World!\n");  // to allow printf to actually show in Output window, right click on Project -> Properties -> Run -> Change Console Type to Standard Output
+    //printf("Hello World!\n");  // to allow printf to actually show in Output window, right click on Project -> Properties -> Run -> Change Console Type to Standard Output
     QApplication app(argc, argv);
 
     // create and show your widgets here

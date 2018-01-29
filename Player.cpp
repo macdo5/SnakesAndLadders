@@ -13,8 +13,7 @@
 
 #include "Player.h"
 
-Player::Player(int ID) {
-    this->ID = ID;
+Player::Player(int ID, bool isHuman) : ID(ID), isHuman(isHuman) {
     this->position = 0;
     switch(ID){
         case 0:
@@ -51,4 +50,8 @@ int Player::GetPosition() const {
 
 int Player::GetID() const {
     return ID;
+}
+
+bool Player::GetIsHuman() const {
+    return isHuman;
 }

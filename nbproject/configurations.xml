@@ -5,6 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>BoardSquare.h</itemPath>
+      <itemPath>Dice.h</itemPath>
+      <itemPath>GameForm.h</itemPath>
+      <itemPath>GameManager.h</itemPath>
       <itemPath>Ladder.h</itemPath>
       <itemPath>MainMenu.h</itemPath>
       <itemPath>NewGameForm.h</itemPath>
@@ -16,6 +19,7 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>GameForm.ui</itemPath>
       <itemPath>MainMenu.ui</itemPath>
       <itemPath>NewGameForm.ui</itemPath>
       <itemPath>SnakesAndLaddersGameForm.ui</itemPath>
@@ -24,6 +28,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>BoardSquare.cpp</itemPath>
+      <itemPath>Dice.cpp</itemPath>
+      <itemPath>GameForm.cpp.cc</itemPath>
+      <itemPath>GameManager.cpp</itemPath>
       <itemPath>Ladder.cpp</itemPath>
       <itemPath>MainMenu.cpp.cc</itemPath>
       <itemPath>NewGameForm.cpp.cc</itemPath>
@@ -64,6 +71,20 @@
       <item path="BoardSquare.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BoardSquare.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Dice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Dice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameForm.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Ladder.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -130,6 +151,20 @@
       <item path="BoardSquare.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BoardSquare.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Dice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Dice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameForm.cpp.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameForm.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Ladder.cpp" ex="false" tool="1" flavor2="0">
       </item>

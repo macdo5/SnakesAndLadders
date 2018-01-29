@@ -22,10 +22,11 @@ public:
     NewGameForm();
     virtual ~NewGameForm();
 private slots:
-    void numPlayersChanged(int i);    
+    void numPlayersChanged(int i);  
+    void btnPlayPressed();
 private:
     Ui::NewGameForm widget;
-    void disableAllPlayerOptions();
+    void disableMultiplayerOptions();
 };
 
 #endif /* _NEWGAMEFORM_H */

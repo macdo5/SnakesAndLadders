@@ -19,14 +19,16 @@ class Player {
     int ID;
     int position;
     QColor colour;
+    bool isHuman;
 public:
-    Player(int ID);
+    Player(int ID, bool isHuman);
     Player(const Player& orig);
     virtual ~Player();
     QColor GetColour() const;
     void SetPosition(int position);
     int GetPosition() const;
     int GetID() const;
+    bool GetIsHuman() const;
 private:
 
 };

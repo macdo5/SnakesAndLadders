@@ -140,6 +140,9 @@
     <property name="text">
      <string>H&amp;uman</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QGroupBox" name="grpBoxP3">
@@ -185,6 +188,9 @@
     <property name="text">
      <string>H&amp;uman</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QGroupBox" name="grpBoxP4">
@@ -229,6 +235,9 @@
     </property>
     <property name="text">
      <string>H&amp;uman</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

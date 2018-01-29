@@ -16,6 +16,10 @@
 BoardSquare::BoardSquare() {
 }
 
+BoardSquare::BoardSquare(int newPosition) : 
+    position(newPosition){
+}
+
 BoardSquare::BoardSquare(const BoardSquare& orig) {
 }
 
