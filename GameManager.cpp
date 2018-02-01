@@ -17,19 +17,13 @@ GameManager::GameManager() {
 }
 
 GameManager::GameManager(int numPlayers, bool playerIsHuman [], int numDice, int boardLength) : 
-boardLength(boardLength), numPlayers(numPlayers){
+numPlayers(numPlayers){
     dice = new Dice(numDice);
     for(int i = 0; i < sizeof(players); i++){
         //gives the player an ID and specifies whether they are human or AI
         players[i] = new Player(i, playerIsHuman[i]);
     }
-    for(int i = 0; i < boardLength; i++){
-        for(int j = 0; j < boardLength; j++){
-            // create each BoardSquare
-            int boardIndex = i * j + j;
-            boardSquares[boardIndex] = new BoardSquare(boardIndex);
-        }
-    }
+    
 }
 GameManager::GameManager(const GameManager& orig) {
 }

@@ -13,23 +13,20 @@
 
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
+#include "Board.h"
 #include "Player.h"
 #include "Dice.h"
-#include "BoardSquare.h"
 #include "Snake.h"
 #include "Ladder.h"
-#include <vector>
 
 /*
 
  */
 class GameManager {
     static const int maxPlayers = 4;
-    static const int maxBoardSquares = 100;
     Dice* dice;
     Player* players [maxPlayers];  // pointer to array of players
-    BoardSquare* boardSquares [maxBoardSquares];
-    int boardLength;  // represents length of perfect square of size 2+, 2^2, 3^2, 4^2 etc
+    Board* board;
     int numPlayers;
     
 public:
@@ -38,7 +35,7 @@ public:
     GameManager(const GameManager& orig);
     virtual ~GameManager();
     
-    Play();
+    void Play();
 private:
 
 };

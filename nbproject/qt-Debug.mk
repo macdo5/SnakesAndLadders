@@ -48,7 +48,8 @@ OBJECTS_DIR   = build/Debug/GNU-Linux/
 
 ####### Files
 
-SOURCES       = BoardSquare.cpp \
+SOURCES       = Board.cpp \
+		BoardSquare.cpp \
 		Dice.cpp \
 		GameForm.cpp.cc \
 		GameManager.cpp \
@@ -59,11 +60,13 @@ SOURCES       = BoardSquare.cpp \
 		Snake.cpp \
 		SnakesAndLaddersGameForm.cpp.cc \
 		Transporter.cpp \
-		main.cpp moc_GameForm.cpp \
+		main.cpp moc_Board.cpp \
+		moc_GameForm.cpp \
 		moc_MainMenu.cpp \
 		moc_NewGameForm.cpp \
 		moc_SnakesAndLaddersGameForm.cpp
-OBJECTS       = build/Debug/GNU-Linux/BoardSquare.o \
+OBJECTS       = build/Debug/GNU-Linux/Board.o \
+		build/Debug/GNU-Linux/BoardSquare.o \
 		build/Debug/GNU-Linux/Dice.o \
 		build/Debug/GNU-Linux/GameForm.cpp.o \
 		build/Debug/GNU-Linux/GameManager.o \
@@ -75,6 +78,7 @@ OBJECTS       = build/Debug/GNU-Linux/BoardSquare.o \
 		build/Debug/GNU-Linux/SnakesAndLaddersGameForm.cpp.o \
 		build/Debug/GNU-Linux/Transporter.o \
 		build/Debug/GNU-Linux/main.o \
+		build/Debug/GNU-Linux/moc_Board.o \
 		build/Debug/GNU-Linux/moc_GameForm.o \
 		build/Debug/GNU-Linux/moc_MainMenu.o \
 		build/Debug/GNU-Linux/moc_NewGameForm.o \
@@ -140,7 +144,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		nbproject/nbproject/qt-Debug.pro BoardSquare.h \
+		nbproject/nbproject/qt-Debug.pro Board.h \
+		BoardSquare.h \
 		Dice.h \
 		GameForm.h \
 		GameManager.h \
@@ -150,7 +155,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		Player.h \
 		Snake.h \
 		SnakesAndLaddersGameForm.h \
-		Transporter.h BoardSquare.cpp \
+		Transporter.h Board.cpp \
+		BoardSquare.cpp \
 		Dice.cpp \
 		GameForm.cpp.cc \
 		GameManager.cpp \
@@ -319,8 +325,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents BoardSquare.h Dice.h GameForm.h GameManager.h Ladder.h MainMenu.h NewGameForm.h Player.h Snake.h SnakesAndLaddersGameForm.h Transporter.h $(DISTDIR)/
-	$(COPY_FILE) --parents BoardSquare.cpp Dice.cpp GameForm.cpp.cc GameManager.cpp Ladder.cpp MainMenu.cpp.cc NewGameForm.cpp.cc Player.cpp Snake.cpp SnakesAndLaddersGameForm.cpp.cc Transporter.cpp main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents Board.h BoardSquare.h Dice.h GameForm.h GameManager.h Ladder.h MainMenu.h NewGameForm.h Player.h Snake.h SnakesAndLaddersGameForm.h Transporter.h $(DISTDIR)/
+	$(COPY_FILE) --parents Board.cpp BoardSquare.cpp Dice.cpp GameForm.cpp.cc GameManager.cpp Ladder.cpp MainMenu.cpp.cc NewGameForm.cpp.cc Player.cpp Snake.cpp SnakesAndLaddersGameForm.cpp.cc Transporter.cpp main.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents GameForm.ui MainMenu.ui NewGameForm.ui SnakesAndLaddersGameForm.ui $(DISTDIR)/
 
 
@@ -347,9 +353,14 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_GameForm.cpp moc_MainMenu.cpp moc_NewGameForm.cpp moc_SnakesAndLaddersGameForm.cpp
+compiler_moc_header_make_all: moc_Board.cpp moc_GameForm.cpp moc_MainMenu.cpp moc_NewGameForm.cpp moc_SnakesAndLaddersGameForm.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_GameForm.cpp moc_MainMenu.cpp moc_NewGameForm.cpp moc_SnakesAndLaddersGameForm.cpp
+	-$(DEL_FILE) moc_Board.cpp moc_GameForm.cpp moc_MainMenu.cpp moc_NewGameForm.cpp moc_SnakesAndLaddersGameForm.cpp
+moc_Board.cpp: BoardSquare.h \
+		Board.h \
+		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/oscar/NetBeansProjects/SnakesAndLadders/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include Board.h -o moc_Board.cpp
+
 moc_GameForm.cpp: ui_GameForm.h \
 		GameForm.h \
 		/usr/lib/x86_64-linux-gnu/qt5/bin/moc
@@ -401,6 +412,10 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
+build/Debug/GNU-Linux/Board.o: Board.cpp Board.h \
+		BoardSquare.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Board.o Board.cpp
+
 build/Debug/GNU-Linux/BoardSquare.o: BoardSquare.cpp BoardSquare.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/BoardSquare.o BoardSquare.cpp
 
@@ -410,18 +425,20 @@ build/Debug/GNU-Linux/Dice.o: Dice.cpp Dice.h
 build/Debug/GNU-Linux/GameForm.cpp.o: GameForm.cpp.cc GameForm.h \
 		ui_GameForm.h \
 		GameManager.h \
+		Board.h \
+		BoardSquare.h \
 		Player.h \
 		Dice.h \
-		BoardSquare.h \
 		Snake.h \
 		Transporter.h \
 		Ladder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/GameForm.cpp.o GameForm.cpp.cc
 
 build/Debug/GNU-Linux/GameManager.o: GameManager.cpp GameManager.h \
+		Board.h \
+		BoardSquare.h \
 		Player.h \
 		Dice.h \
-		BoardSquare.h \
 		Snake.h \
 		Transporter.h \
 		Ladder.h
@@ -463,6 +480,9 @@ build/Debug/GNU-Linux/Transporter.o: Transporter.cpp Transporter.h \
 build/Debug/GNU-Linux/main.o: main.cpp MainMenu.h \
 		ui_MainMenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/main.o main.cpp
+
+build/Debug/GNU-Linux/moc_Board.o: moc_Board.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_Board.o moc_Board.cpp
 
 build/Debug/GNU-Linux/moc_GameForm.o: moc_GameForm.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_GameForm.o moc_GameForm.cpp
